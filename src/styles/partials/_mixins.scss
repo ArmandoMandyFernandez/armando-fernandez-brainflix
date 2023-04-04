@@ -1,0 +1,86 @@
+@use "./typography" as *;
+@use "./variables" as *;
+
+//screen breakpoints
+@mixin tablet {
+    @media (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+//font mixins
+@mixin mobile-page-header {
+    font-family: "avenir";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+
+@mixin mobile-section-header {
+    font-family: "avenir";
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+
+@mixin mobile-subheader {
+    font-family: "avenir";
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 700;
+}
+
+@mixin mobile-body-copy {
+    font-family: "avenir";
+    font-size: 0.8125rem;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+@mixin mobile-labels-buttons {
+    font-family: "avenir";
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+
+@mixin desktop-tablet-header {
+    font-family: "avenir";
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+}
+
+@mixin desktop-tablet-section-header {
+    font-family: "avenir";
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+
+@mixin desktop-tablet-subheader {
+    font-family: "avenir";
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 700;
+}
+
+@mixin desktop-tablet-body-copy {
+    font-family: "avenir";
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+}
+
+@mixin desktop-tabled-labels-buttons {
+    font-family: "avenir";
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
