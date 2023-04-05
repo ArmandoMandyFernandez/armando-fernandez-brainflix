@@ -48,12 +48,28 @@
     }
 
     &__functions{
+        display: flex;
+        justify-content: center;
         width: 100%;
         padding: 1rem 0;
     }
     
     &__functions-search{
         width: 85%;
+        margin-right: 5%;
+        
+    }
+
+    &__functions-avatar-1{
+        padding: 1%;
+        width: 15%;
+        position: relative;
+        border-radius: 50%;
+        max-width: 2.25rem;
+        max-height: 2.25rem;
+        @include tablet{
+            display: none;
+        }
     }
 
     &__functions-upload{
@@ -72,18 +88,6 @@
         
         }
     
-    &__functions-avatar-1{
-        padding: 1%;
-        width: 15%;
-        position: relative;
-        
-        border-radius: 50%;
-        max-width: 2.25rem;
-        max-height: 2.25rem;
-        @include tablet{
-            display: none;
-        }
-    }
     &__functions-avatar-2{
         display: none;
         @include tablet{
