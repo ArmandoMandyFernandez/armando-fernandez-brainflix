@@ -13,13 +13,11 @@ function Header(){
             <div className="navBar__functions">
                 <input type="text" placeholder="Search" className="navBar__functions-search"></input>
                 <img className="navBar__functions-avatar-1" type='submit' src={avatar} />
-            </div>
-            <div className='navBar__functions-button-container'>
-                <button className="navBar__functions-button">
-                    <img className='navBar__functions-upload-image' src={upload} />
-                    <span className='navBar__functions-upload'>UPLOAD</span>
-                </button>
-                <img className="navBar__functions-avatar-2" type='submit' src={avatar} />
+            <button className="navBar__functions-button">
+                <img className='navBar__functions-upload-image' src={upload} />
+                <span className='navBar__functions-upload'>UPLOAD</span>
+            </button>
+            <img className="navBar__functions-avatar-2" type='submit' src={avatar} />
             </div>
         </div>
     </header>

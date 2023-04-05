@@ -30,38 +30,29 @@
         padding: 1rem;
     }
 
-    &__functions-button{
-        @include mobile-labels-buttons;
-        color: $primary-white;
-        background-color: $primary-blue;
-        // background-image: url('../../assets/images/Icons/upload.svg');
-        // background-repeat: no-repeat;
-        border-radius: .25rem;
-        height: 2.5rem;
-        width: 100%;
-        padding: 0 2rem;
-        position: relative;
-        display: inline-block;
-        &:hover{
-            background-color: $secondary-blue;
-        }
-    }
-
     &__functions{
         display: flex;
         justify-content: center;
         width: 100%;
         padding: 1rem 0;
+
+        @include tablet{
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 1rem;
+        }
     }
     
     &__functions-search{
         width: 85%;
         margin-right: 5%;
-        
+        @include tablet{
+            height: 2.25rem;
+            width: 35%;
+        }  
     }
-
+    
     &__functions-avatar-1{
-        padding: 1%;
         width: 15%;
         position: relative;
         border-radius: 50%;
@@ -71,18 +62,34 @@
             display: none;
         }
     }
+    &__functions-button{
+        @include mobile-labels-buttons;
+        color: $primary-white;
+        background-color: $primary-blue;
+        border-radius: .25rem;
+        height: 2.5rem;
+        width: 100%;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        &:hover{
+            background-color: $secondary-blue;
+        }
+
+        @include tablet{
+            width: 25%;
+        }
+    }
 
     &__functions-upload{
-        display: inline-block;
-        vertical-align: middle;
-        margin-left: 35%;
-        margin-right: 35%;
+        margin-left: 37%;
+        @include tablet{
+            margin-left: 23%;
+        }
         
     }
 
     &__functions-upload-image{
-        display: inline-block;
-        vertical-align: middle;
         width: .75rem;
         height: .75rem;
         
