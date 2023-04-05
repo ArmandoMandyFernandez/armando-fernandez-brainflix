@@ -1,0 +1,98 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/globals' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
+.navBar{
+    padding: 1rem;
+    @include desktop{
+        margin: auto;
+    }
+    
+
+    &__logo-container{
+        padding: 1rem;
+    }
+    &__logo{
+        max-height: 1.5625rem;
+        max-width: 7.5rem;
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            flex-direction: row;
+        }
+    }
+
+    &__functions{
+        padding: 1rem;
+    }
+
+    &__functions-button{
+        @include mobile-labels-buttons;
+        color: $primary-white;
+        background-color: $primary-blue;
+        // background-image: url('../../assets/images/Icons/upload.svg');
+        // background-repeat: no-repeat;
+        border-radius: .25rem;
+        height: 2.5rem;
+        width: 100%;
+        padding: 0 2rem;
+        position: relative;
+        display: inline-block;
+        &:hover{
+            background-color: $secondary-blue;
+        }
+    }
+
+    &__functions{
+        width: 100%;
+        padding: 1rem 0;
+    }
+    
+    &__functions-search{
+        width: 85%;
+    }
+
+    &__functions-upload{
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 35%;
+        margin-right: 35%;
+        
+    }
+
+    &__functions-upload-image{
+        display: inline-block;
+        vertical-align: middle;
+        width: .75rem;
+        height: .75rem;
+        
+        }
+    
+    &__functions-avatar-1{
+        padding: 1%;
+        width: 15%;
+        position: relative;
+        
+        border-radius: 50%;
+        max-width: 2.25rem;
+        max-height: 2.25rem;
+        @include tablet{
+            display: none;
+        }
+    }
+    &__functions-avatar-2{
+        display: none;
+        @include tablet{
+            display: unset;
+            border-radius: 50%;
+            max-width: 2.5rem;
+            max-height: 2.25rem;
+            margin: .5rem;
+        }
+
+    }
+}

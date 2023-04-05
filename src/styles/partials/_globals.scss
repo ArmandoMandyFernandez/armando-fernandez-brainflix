@@ -1,6 +1,6 @@
-@use './mixins' as *;
-@use './variables' as *;
-@use './typography' as *;
+@use '../partials/mixins' as *;
+@use '../partials/variables' as *;
+@use '../partials/typography' as *;
 
 *,
 *::before,
@@ -9,6 +9,6 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  font-family: 'regular', Arial, Helvetica, sans-serif;
+  font-family: 'avenir', Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
 }
