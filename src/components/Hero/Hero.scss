@@ -1,7 +1,17 @@
 .videoHero{
     background-color: black;
     width: 100%;
-    height: 15rem;
+
+    &__container{
+        width: 100%;
+        
+    }
+
+    &__video{
+        max-width: 100%;
+        position: absolute;
+        left: 0%;
+    }
     
 
     &__buttons-container{
@@ -10,6 +20,14 @@
         width: 80%;
         margin: auto;
         margin-top: 3%;
+        position: relative;
     }
+
+    &__play-button{
+        background-color: rgba($color: #000000, $alpha: .50);
+    }
+
+
+
 }
 
