@@ -4,6 +4,7 @@ import videos from '../../data/videos.json';
 import videoDetails from '../../data/video-details.json'
 import { useState } from 'react';
 import VideoInfo from "../VideoInfo/VideoInfo";
+import Comments from "../Comments/Comments";
 
 function Main(){
     const [selectedVideo, setSelectedVideo] = useState(videoDetails[0])
@@ -19,6 +20,7 @@ function Main(){
         <main className="main">
             <Hero selectedVideo={selectedVideo}/>
             <VideoInfo selectedVideo={selectedVideo}/>
+            <Comments selectedVideo={selectedVideo}/>
 
         </main>
     )
