@@ -19,13 +19,13 @@ const Comments = ({ selectedVideo }) => {
                             className="comments__comment-label"
                         >
                             JOIN THE CONVERSATION
-                            <textarea
+                            <input
                                 name="comment"
                                 id="comment"
                                 placeholder="Add a new comment"
                                 className="comments__comment-label-input"
                                 required
-                            ></textarea>
+                            ></input>
                         </label>
                         <button type="submit" className="comments__button">
                             <img
@@ -40,14 +40,15 @@ const Comments = ({ selectedVideo }) => {
                     </form>
                 </div>
             </div>
-            <div id="comments__list" className="comments__list">
-                <div className="comments__card">
-                    <div className="comments__card-image"></div>
-
-                    {comments.map((commentee) => (
+            {comments.map((commentee) => (
+                <div id="comments__list" className="comments__list">
+                    <div className="comments__card">
+                        <div className="comments__card-image"></div>
                         <div className="comments__card-data">
                             <div className="comments__card-name-date-container">
-                                <h4 className="comments__card-name">{commentee.name}</h4>
+                                <h4 className="comments__card-name">
+                                    {commentee.name}
+                                </h4>
                                 <p className="comments__card-date">
                                     {commentee.timestamp}
                                 </p>
@@ -58,9 +59,9 @@ const Comments = ({ selectedVideo }) => {
                                 </p>
                             </div>
                         </div>
-                    ))}
+                    </div>
                 </div>
-            </div>
+            ))}
         </section>
     );
 };

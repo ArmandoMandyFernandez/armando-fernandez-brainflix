@@ -10,7 +10,7 @@ function Hero({selectedVideo}) {
 return ( 
         <section className='videoHero'>
             <div className='videoHero__container'>
-                <video className='videoHero__video' poster={image}></video>
+                <video className='videoHero__video' poster={image} controls></video>
             </div>
             {/* <div className='videoHero__buttons-container'>
                 <img src={play} alt="play button" className='videoHero__play-button'/>
