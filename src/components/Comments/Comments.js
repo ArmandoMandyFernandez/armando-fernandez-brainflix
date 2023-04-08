@@ -19,8 +19,6 @@ const Comments = ({ selectedVideo }) => {
                             <textarea
                                 name="comment"
                                 id="comment"
-                                cols="30"
-                                rows="3"
                                 placeholder="Add a new comment"
                                 className="comments__comment-label-input"
                                 required
@@ -33,7 +31,21 @@ const Comments = ({ selectedVideo }) => {
                     </form>
                 </div>
             </div>
-            <div id="comments__list" className="comments__list"></div>
+            <div id="comments__list" className="comments__list">
+                <div className="comments__card">
+                    <div className="comments__card-image"></div>
+                    <div className="comments__card-data">
+                        <div className="comments__card-name-date-container">
+                            <h4 className="comments__card-name">NAME</h4>
+                            <p className="comments__card-date">DATE</p>
+                        </div>
+                        <div className="comments__card-review-container">
+                            <p className="comments__card-review">REVIEW</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
     );
 };
