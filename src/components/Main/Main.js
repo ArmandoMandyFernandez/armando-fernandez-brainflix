@@ -5,6 +5,7 @@ import videoDetails from "../../data/video-details.json";
 import { useState } from "react";
 import VideoInfo from "../VideoInfo/VideoInfo";
 import Comments from "../Comments/Comments";
+import NextVideos from "../NextVideos/NextVideos";
 
 function Main() {
     const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
@@ -25,13 +26,11 @@ function Main() {
                 <div className="main__content">
                     <VideoInfo selectedVideo={selectedVideo} />
                     <Comments
-                        selectedVideo={selectedVideo}
-                        clickHandler={videoClick}
-                        videosLeft={filteredVideos}
+                        selectedVideo={selectedVideo}  
                     />
                 </div>
                 <div className="main__next-videos">
-                    Next Videos
+                    <NextVideos clickHandler={videoClick} videosLeft={filteredVideos}/>
                 </div>
             </div>
         </main>
