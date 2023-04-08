@@ -1,6 +1,6 @@
 import "./Comments.scss";
 import mohan from "../../assets/images/Mohan-muruge.jpg";
-import commentIcon from '../../assets/images/Icons/add_comment.svg'
+import commentIcon from "../../assets/images/Icons/add_comment.svg";
 
 const Comments = ({ selectedVideo }) => {
     const { comments } = selectedVideo;
@@ -14,7 +14,10 @@ const Comments = ({ selectedVideo }) => {
                 </div>
                 <div className="comments__container-form">
                     <form action="#" className="comments__form">
-                        <label for="comment" className="comments__comment-label">
+                        <label
+                            for="comment"
+                            className="comments__comment-label"
+                        >
                             JOIN THE CONVERSATION
                             <textarea
                                 name="comment"
@@ -25,8 +28,14 @@ const Comments = ({ selectedVideo }) => {
                             ></textarea>
                         </label>
                         <button type="submit" className="comments__button">
-                            <img src={commentIcon} alt="" className="comments__button-icon"/>
-                            <span className="comments__button-comment">COMMENT</span>
+                            <img
+                                src={commentIcon}
+                                alt=""
+                                className="comments__button-icon"
+                            />
+                            <span className="comments__button-comment">
+                                COMMENT
+                            </span>
                         </button>
                     </form>
                 </div>
@@ -34,16 +43,22 @@ const Comments = ({ selectedVideo }) => {
             <div id="comments__list" className="comments__list">
                 <div className="comments__card">
                     <div className="comments__card-image"></div>
-                    <div className="comments__card-data">
-                        <div className="comments__card-name-date-container">
-                            <h4 className="comments__card-name">NAME</h4>
-                            <p className="comments__card-date">DATE</p>
-                        </div>
-                        <div className="comments__card-review-container">
-                            <p className="comments__card-review">REVIEW</p>
-                        </div>
-                    </div>
 
+                    {comments.map((commentee) => (
+                        <div className="comments__card-data">
+                            <div className="comments__card-name-date-container">
+                                <h4 className="comments__card-name">{commentee.name}</h4>
+                                <p className="comments__card-date">
+                                    {commentee.timestamp}
+                                </p>
+                            </div>
+                            <div className="comments__card-review-container">
+                                <p className="comments__card-review">
+                                    {commentee.comment}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
