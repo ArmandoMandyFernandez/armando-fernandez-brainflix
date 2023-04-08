@@ -4,9 +4,11 @@
 
 .videoInfo{
     padding: 1rem;
+    @include tablet{
+        padding: 0 2.25rem;
+    }
 
     &__title-container{
-        @include mobile-page-header;
         text-align: left;
         padding: 1rem 0;
         border-bottom: solid 2px $secondary-silver;
@@ -16,68 +18,110 @@
         }
     }
 
+    &__title{
+        @include mobile-page-header;
+    }
+
     &__stats-container{
         border-bottom: solid 2px $secondary-silver;
         padding: 1rem 0;
+        display: flex;
         @include tablet{
-            display: flex;
             justify-content: space-between;
         }
     }
 
-    &__byViews-container{
+    &__byDate-container{
         display: flex;
+        flex-direction: column;
         justify-content: flex-start;
-        padding: 1rem 0;
         flex-grow: 1;
         text-align: left;
         @include tablet{
             padding: unset;
+            flex-direction: row;
+            align-items: center;
         }
     }
     &__channel{
+        @include mobile-subheader;
         width: 50%;
+        margin: .5rem 0;
         @include tablet{
             width: unset;
+            margin: unset;
+            margin-right: 1rem;
         }
     }
 
-    &__channel-views{
-        width: 50%;
-        @include tablet{
-            width: unset;
-        }
+    &__date{
+        @include mobile-body-copy
     }
 
     &__channel-views{
+        @include mobile-subheader;
+        width: 50%;
         color: $primary-silver;
+        margin: .5rem 0;
+        @include tablet{
+            width: unset;
+            margin-right: 1rem;
+        }
     }
 
-    &__dateLikes-container{
+    &__channel-views-icon{
+        margin-right: .5rem;
+    }
+
+
+    &__viewsLikes-container{
         display: flex;
+        flex-direction: column;
         justify-content: flex-start;
         text-align: left;
         flex-grow: 1;
         color: $primary-silver;
+        @include tablet{
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+
+    &__views-container{
+        display: flex;
+    }
+
+    &__likes-container{
+        display: flex;
     }
 
     &__date{
+        @include mobile-body-copy;
         width: 50%;
+        color: $primary-silver;
         @include tablet{
             width: unset;
         }
     }
 
     &__likes{
+        @include mobile-body-copy;
         width: 50%;
         @include tablet{
             width: unset;
+            
         }
+    }
+
+    &__likes-icon{
+        margin-right: .5rem;        
     }
 
     &__description-container{
         padding: 1rem 0;
         text-align: left;
+        
     }
 
 
