@@ -5,8 +5,9 @@
     width: 100%;
 
     &__container{
-        width: 100%;
-        
+        @include desktop{
+            padding: 0 10%;
+        }
     }
 
     &__video{
