@@ -13,8 +13,8 @@ const VideoInfo = ({ selectedVideo }) => {
             </div>
             <div className="videoInfo__stats-container">
                 <div className="videoInfo__byDate-container">
-                    <h3 className="videoInfo__channel">By {channel}</h3>
-                    <p className="videoInfo__date">{timestamp}</p>
+                    <h3 className="videoInfo__channel">{channel}</h3>
+                    <p className="videoInfo__date">{new Date(timestamp).toLocaleDateString('en-US',{month:'2-digit', day:'2-digit',year:'numeric'})}</p>
                 </div>
                 <div className="videoInfo__viewsLikes-container">
                     <div className="videoInfo__views-container">

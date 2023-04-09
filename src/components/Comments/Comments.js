@@ -5,9 +5,10 @@ import commentIcon from "../../assets/images/Icons/add_comment.svg";
 const Comments = ({ selectedVideo }) => {
     const { comments } = selectedVideo;
 
+
     return (
         <section className="comments">
-            <h3 className="comments__header">3 Comments</h3>
+            <h3 className="comments__header">{comments.length} Comments</h3>
             <div className="comments__container">
                 <div className="comments__image-container">
                     <img src={mohan} alt="" className="comments__image-photo" />
@@ -50,7 +51,7 @@ const Comments = ({ selectedVideo }) => {
                                     {commentee.name}
                                 </h4>
                                 <p className="comments__card-date">
-                                    {commentee.timestamp}
+                                    {new Date(commentee.timestamp).toLocaleDateString('en-US',{month:'2-digit', day:'2-digit',year:'numeric'})}
                                 </p>
                             </div>
                             <div className="comments__card-review-container">

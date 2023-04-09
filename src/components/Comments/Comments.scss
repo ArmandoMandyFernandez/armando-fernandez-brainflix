@@ -26,7 +26,7 @@
     }
 
     &__image-container {
-        margin-top: 1rem;
+        padding: 6% 0;
         @include tablet {
             margin-top: 2rem;
         }
@@ -34,7 +34,7 @@
 
     &__image-photo {
         max-width: 2.25rem;
-        max-height: 2.25rem;
+        max-height: 2.5rem;
         border-radius: 50%;
         @include tablet {
             max-width: 3rem;
@@ -65,7 +65,7 @@
             @include desktop-tablet-subheader;
         }
         @include desktop{
-            padding-right: 1rem;
+            padding-righ: 1rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -73,11 +73,13 @@
     }
 
     &__comment-label-input {
+        color: $primary-black;
         width: 100%;
+        height: 5rem;
         border: solid 1px $secondary-silver;
         background-color: $secondary-white;
         border-radius: 0.25rem;
-        padding: 1rem;
+        padding: .5rem .25rem;
         @include tablet{
             padding: .65rem 1rem;
         }
