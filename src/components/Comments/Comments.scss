@@ -21,15 +21,11 @@
         display: flex;
         @include tablet{
             border-bottom: solid 1px $secondary-silver;
-            padding-bottom: 1rem;
         }
     }
 
     &__image-container {
-        padding: 6% 0;
-        @include tablet {
-            margin-top: 2rem;
-        }
+        padding: 6% 0;        
     }
 
     &__image-photo {
@@ -48,6 +44,9 @@
         color: $primary-silver;
         flex-grow: 1;
         padding: 0.75rem;
+        @include desktop{
+            padding: 5% 0.75rem;
+        }
         
     }
 
@@ -65,7 +64,7 @@
             @include desktop-tablet-subheader;
         }
         @include desktop{
-            padding-righ: 1rem;
+            padding-right: 1rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -82,6 +81,7 @@
         padding: .5rem .25rem;
         @include tablet{
             padding: .65rem 1rem;
+            height: unset;
         }
 
     }
