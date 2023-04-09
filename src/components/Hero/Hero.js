@@ -12,14 +12,6 @@ return (
             <div className='videoHero__container'>
                 <video className='videoHero__video' poster={image} controls></video>
             </div>
-            {/* <div className='videoHero__buttons-container'>
-                <img src={play} alt="play button" className='videoHero__play-button'/>
-                <img src={scroller} alt="video scroller" className='videoHero__scroller'/>
-                <div className='videoHero__full-volume-container'>
-                    <img src={fullScreen} alt="full screen button" className='videoHero__fullScreen-button'/>
-                    <img src={volume} alt="volume button" className='videoHero__volume-button'/>
-                </div>
-            </div> */}
         </section>
 
     );

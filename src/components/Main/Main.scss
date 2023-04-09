@@ -1,3 +1,29 @@
+@use '../../styles/partials/globals' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+
 .main{
-    
+
+    &__container{
+        @include desktop{
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            padding: 0 3%;
+        }
+    }
+
+    &__content{
+        @include desktop{
+            width: 70%;
+        }
+    }
+
+    &__next-videos{
+        @include desktop{
+            width: 30%;
+        }
+    }
 }

@@ -7,10 +7,10 @@
     padding: 1rem;
 
     @include tablet{
-        padding: 1rem 2.25rem;
+        padding: .5rem 2.25rem;
     }
     @include desktop{
-        padding: 2.25rem 3rem;
+        padding: .5rem 4rem;
         margin: auto;
     }
     
@@ -19,7 +19,7 @@
         padding: 1rem 0;
         @include tablet{
             padding-top: unset;
-            padding: 1rem 0;
+            padding: .5rem 0;
         }
     }
     &__logo{
@@ -45,15 +45,14 @@
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        padding-bottom:1rem;
-        // padding: 1rem 0;
+        padding-bottom: 1rem;
 
         @include tablet{
             flex-direction: row;
             justify-content: flex-end;
             align-items: center;
             width: 70%;
-            padding: 1rem;  
+            padding: .5rem 1rem;  
         }
 
         @include desktop {
@@ -64,10 +63,9 @@
     &__feature-container{
         display: flex;
         margin-bottom: 1rem;
-        
-
         @include tablet{
             margin-bottom: unset;
+            flex-grow: 1;
         }
     }
 

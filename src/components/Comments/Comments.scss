@@ -6,23 +6,30 @@
     text-align: left;
     padding: 0 1rem 1rem 1rem;
     @include tablet {
-        padding: 2.25rem;
+        padding: 0 2.25rem;
     }
 
     &__header {
         @include mobile-section-header;
         margin: 1rem 0;
+        @include tablet {
+            @include desktop-tablet-section-header;
+        }
     }
 
     &__container {
         display: flex;
         @include tablet{
             border-bottom: solid 1px $secondary-silver;
+            padding-bottom: 1rem;
         }
     }
 
     &__image-container {
         margin-top: 1rem;
+        @include tablet {
+            margin-top: 2rem;
+        }
     }
 
     &__image-photo {
@@ -54,6 +61,15 @@
 
     &__comment-label {
         @include mobile-subheader;
+        @include tablet{
+            @include desktop-tablet-subheader;
+        }
+        @include desktop{
+            padding-right: 1rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
     }
 
     &__comment-label-input {
@@ -102,15 +118,6 @@
         display: flex;
         margin: 1rem 0 1rem 0;
         border-bottom: solid 1px $secondary-silver;
-
-        @include tablet {
-            
-        }
-
-        @include desktop {
-            width: 50%;
-            margin: 2% auto 2% auto;
-        }
     }
 
     &__card-image {
@@ -142,6 +149,9 @@
 
     &__card-name {
         @include mobile-subheader;
+        @include tablet{
+            @include desktop-tablet-subheader
+        }
     }
 
     &__card-date {
@@ -150,5 +160,8 @@
 
     &__card-review{
         @include mobile-body-copy;
+        @include tablet{
+            @include desktop-tablet-body-copy;
+        }
     }
 }

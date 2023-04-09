@@ -1,0 +1,23 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/globals' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.nextVideos{
+    text-align: left;
+    padding: 1rem;
+    @include tablet{
+        padding: 0 2.25rem;
+    }
+    @include desktop{
+        
+    }
+
+    &__header{
+        color: $primary-silver;
+        @include mobile-section-header;
+        
+    }
+
+
+}

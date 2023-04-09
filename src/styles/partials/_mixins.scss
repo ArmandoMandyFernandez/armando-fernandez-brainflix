@@ -16,14 +16,14 @@
 
 //font mixins
 @mixin mobile-page-header {
-    font-family: "avenir";
+    font-family: "bold";
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 700;
 }
 
 @mixin mobile-section-header {
-    font-family: "avenir";
+    font-family: "bold";
     font-size: 0.75rem;
     line-height: 1.25rem;
     font-weight: 700;
@@ -51,14 +51,14 @@
 }
 
 @mixin desktop-tablet-header {
-    font-family: "avenir";
+    font-family: "bold";
     font-size: 2.0625rem;
     line-height: 2.75rem;
     font-weight: 700;
 }
 
 @mixin desktop-tablet-section-header {
-    font-family: "avenir";
+    font-family: "bold";
     font-size: 0.75rem;
     line-height: 1.25rem;
     font-weight: 700;

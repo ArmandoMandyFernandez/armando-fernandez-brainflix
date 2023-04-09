@@ -21,8 +21,8 @@ function Main() {
 
     return (
         <main className="main">
+            <Hero selectedVideo={selectedVideo} />
             <div className="main__container">
-                <Hero selectedVideo={selectedVideo} />
                 <div className="main__content">
                     <VideoInfo selectedVideo={selectedVideo} />
                     <Comments
