@@ -10,7 +10,7 @@
         padding: 0 2.25rem;
     }
     @include desktop{
-        
+        border-left: solid 1px $secondary-silver;
     }
 
     &__header{
