@@ -32,11 +32,11 @@
 
     &__image-photo {
         max-width: 2.25rem;
-        max-height: 2.5rem;
+        height: 2.25rem;
         border-radius: 50%;
         @include tablet {
             max-width: 3rem;
-            max-height: 3rem;
+            max-height: 5rem;
         }
     }
 

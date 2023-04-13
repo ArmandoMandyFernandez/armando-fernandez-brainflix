@@ -3,13 +3,17 @@ import logo from "../../assets/images/Logo/BrainFlix-logo.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import upload from "../../assets/images/Icons/upload.svg";
 import search from "../../assets/images/Icons/search.svg";
+import Upload from "../../pages/Upload/Upload";
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
         <header className="navBar">
             <div className="navBar__content">
                 <div className="navBar__logo-container">
-                    <img className="navBar__logo" src={logo} />
+                    <Link to='/'>
+                        <img className="navBar__logo" src={logo} />
+                    </Link>
                 </div>
                 <div className="navBar__functions">
                     <div className="navBar__feature-container">
@@ -33,13 +37,17 @@ function Header() {
                             src={avatar}
                         />
                     </div>
-                    <button className="navBar__functions-button">
-                        <img
-                            className="navBar__functions-upload-image"
-                            src={upload}
-                        />
-                        <span className="navBar__functions-upload">UPLOAD</span>
-                    </button>
+                    <Link to='upload'>
+                        <button className="navBar__functions-button">
+                            <img
+                                className="navBar__functions-upload-image"
+                                src={upload}
+                            />
+                            <span className="navBar__functions-upload">
+                                UPLOAD
+                            </span>
+                        </button>
+                    </Link>
                     <img className="navBar__functions-avatar-2" src={avatar} />
                 </div>
             </div>
