@@ -1,16 +1,16 @@
 import "./Main.scss";
-import Hero from "../Hero/Hero";
+import Hero from "../../components/Hero/Hero";
 import videoDetails from "../../data/video-details.json";
 import { useState, useEffect } from "react";
-import VideoInfo from "../VideoInfo/VideoInfo";
-import Comments from "../Comments/Comments";
-import NextVideos from "../NextVideos/NextVideos";
+import VideoInfo from "../../components/VideoInfo/VideoInfo";
+import Comments from "../../components/Comments/Comments";
+import NextVideos from "../../components/NextVideos/NextVideos";
 import axios from "axios";
 
 function Main() {
     const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
     const [videos, setVideos] = useState([]);
-    const [videoDetails, setVideoDetails] = useState();
+    
 
     const videoClick = (videoId) => {
         const foundVideo = videoDetails.find((video) => video.id === videoId);

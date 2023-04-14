@@ -16,7 +16,7 @@ const Comments = ({ selectedVideo }) => {
                 <div className="comments__container-form">
                     <form action="#" className="comments__form">
                         <label
-                            for="comment"
+                            htmlFor="comment"
                             className="comments__comment-label"
                         >
                             JOIN THE CONVERSATION
@@ -37,12 +37,12 @@ const Comments = ({ selectedVideo }) => {
                             <span className="comments__button-comment">
                                 COMMENT
                             </span>
-                        </button>
+                        </button>s
                     </form>
                 </div>
             </div>
             {comments.map((commentee) => (
-                <div id="comments__list" className="comments__list">
+                <div key={commentee.id} id="comments__list" className="comments__list">
                     <div className="comments__card">
                         <div className="comments__card-image"></div>
                         <div className="comments__card-data">

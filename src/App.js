@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
+import Main from "./pages/Main/Main";
 import Upload from "./pages/Upload/Upload";
 import NotFound from "./pages/NotFound/NotFound";
 import { Routes, Route, Navigate } from "react-router-dom";
