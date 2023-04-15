@@ -153,13 +153,14 @@
 
     &__functions-upload{
         flex-grow: 1;
-    }
 
-    &__functions-upload-image{
+        &-image{
         width: 1rem;
         height: 1rem;
-        
+        position: absolute;
         }
+    }
+
     
     &__functions-avatar-2{
         display: none;
