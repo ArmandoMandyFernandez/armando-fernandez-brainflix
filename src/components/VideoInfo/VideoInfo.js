@@ -23,9 +23,9 @@ const VideoInfo = ({selectedVideoId}) => {
     if(videoDetails === null){
         return <div>LOADING...</div>
     }
-
-
     const { title, channel, description, views, likes, timestamp } = videoDetails;
+
+    // const { title, channel, description, views, likes, timestamp } = selectedVideoId;
     
     return (
         <section className="videoInfo">

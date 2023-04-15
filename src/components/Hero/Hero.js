@@ -20,10 +20,10 @@ function Hero({selectedVideoId}) {
     if(videoDetails === null){
         return <div>LOADING...</div>
     }
-
-
-
     const {image} = videoDetails;
+
+
+    // const {image} = selectedVideoId;
 
 return ( 
         <section className='videoHero'>

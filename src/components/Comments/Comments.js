@@ -1,10 +1,10 @@
 import "./Comments.scss";
-import { useState, useEffect } from "react";
 import mohan from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/images/Icons/add_comment.svg";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Comments = ({ selectedVideoId }) => {
+const Comments = ({selectedVideoId}) => {
     const [videoDetails, setVideoDetails] = useState(null);
 
     useEffect(() =>{
@@ -24,10 +24,13 @@ const Comments = ({ selectedVideoId }) => {
 
     const { comments } = videoDetails;
 
+    // const { comments } = selectedVideoId;
+
+
 
     return (
         <section className="comments">
-            <h3 className="comments__header">{comments.length} Comments</h3>
+            <h3 className="comments__header">{comments.length}Comments</h3>
             <div className="comments__container">
                 <div className="comments__image-container">
                     <img src={mohan} alt="" className="comments__image-photo" />
@@ -56,7 +59,7 @@ const Comments = ({ selectedVideoId }) => {
                             <span className="comments__button-comment">
                                 COMMENT
                             </span>
-                        </button>s
+                        </button>
                     </form>
                 </div>
             </div>

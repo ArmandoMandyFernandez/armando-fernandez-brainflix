@@ -10,6 +10,7 @@ import axios from "axios";
 function Main() {
     const {idFromParams} = useParams();
     const [videos, setVideos] = useState([]);
+    // const [videoDetails, setVideoDetails] = useState(null);
     
     let defaultVideoId = null;
 
@@ -34,6 +35,25 @@ function Main() {
             })
 
     }, []);
+
+    // useEffect(() => {
+    //     if(videoIdToDisplay === null){
+    //         return;
+    //     }
+    //     axios
+    //         .get(`https://project-2-api.herokuapp.com/videos/${videoIdToDisplay}?api_key=2aa1c4a6-3f46-439f-8439-d592411fdb89`)
+    //         .then((response) => {
+    //             console.log(response.data);
+    //             setVideoDetails(response.data);
+    //         });
+    // }, [videoIdToDisplay])
+
+    // if(videoDetails === null){
+    //     return <div>LOADING...</div>
+    // }
+
+
+
 
 
     return (
