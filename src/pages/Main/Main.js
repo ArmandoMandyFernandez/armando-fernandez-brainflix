@@ -1,56 +1,51 @@
 import "./Main.scss";
-import Hero from "../../components/Hero/Hero";
-import videoDetails from "../../data/video-details.json";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import Hero from "../../components/Hero/Hero";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import Comments from "../../components/Comments/Comments";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import axios from "axios";
 
 function Main() {
-    const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
+    const {idFromParams} = useParams();
     const [videos, setVideos] = useState([]);
     
+    let defaultVideoId = null;
 
-    const videoClick = (videoId) => {
-        const foundVideo = videoDetails.find((video) => video.id === videoId);
-        setSelectedVideo(foundVideo);
-    };
+    if(videos.length > 0) {
+        defaultVideoId = videos[0].id;
+    }
+
+    let videoIdToDisplay = idFromParams || defaultVideoId;
+    
+    const filteredVideos = videos.filter(
+        video => video.id !== videoIdToDisplay);
+
 
     useEffect(() => {
         axios
             .get(
                 "https://project-2-api.herokuapp.com/videos/?api_key=2aa1c4a6-3f46-439f-8439-d592411fdb89"
             )
-            .then((response) => setVideos(response.data))
-            .catch((error) => console.log(error));
+            .then(response => {
+                console.log(response.data);
+                setVideos(response.data);
+            })
+
     }, []);
 
-    // useEffect(() => {
-    //     axios
-    //         .get(`https://project-2-api.herokuapp.com/videos/${videoDetails}?api_key=2aa1c4a6-3f46-439f-8439-d592411fdb89`)
-    //         .then((response) => {
-    //             setSelectedVideo(response.data);
-    //         });
-    // }, [videoDetails]);
-
-    const filteredVideos = videos.filter(
-        (video) => video.id !== selectedVideo.id
-    );
 
     return (
         <main className="main">
-            <Hero selectedVideo={selectedVideo} />
+            <Hero selectedVideoId={videoIdToDisplay} />
             <div className="main__container">
                 <div className="main__content">
-                    <VideoInfo selectedVideo={selectedVideo} />
-                    <Comments selectedVideo={selectedVideo} />
+                    <VideoInfo selectedVideoId={videoIdToDisplay} />
+                    <Comments selectedVideoId={videoIdToDisplay} />
                 </div>
                 <div className="main__next-videos">
-                    <NextVideos
-                        clickHandler={videoClick}
-                        videosLeft={filteredVideos}
-                    />
+                    <NextVideos videos={filteredVideos} />
                 </div>
             </div>
         </main>

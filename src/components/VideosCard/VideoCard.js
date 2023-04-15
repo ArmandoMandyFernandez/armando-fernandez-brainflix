@@ -1,17 +1,23 @@
-import './VideoCard.scss'
+import { Link } from "react-router-dom";
+import "./VideoCard.scss";
 
-
-const VideoCard = ({clickHandler, videos}) => {
+const VideoCard = ({ video }) => {
     return (
-        <div className="videoCard">
-            <div className="videoCard__image-container">
-                <img src={videos.image} className='videoCard__image' alt="" onClick={() => clickHandler(videos.id)}/>
+        <Link className="videoCard" to={`/videos/${video.id}`}>
+            <div className="videoCard">
+                <div className="videoCard__image-container">
+                    <img
+                        src={video.image}
+                        className="videoCard__image"
+                        alt=""
+                    />
+                </div>
+                <div className="videoCard__info-container">
+                    <p className="videoCard__title">{video.title}</p>
+                    <p className="videoCard__channel">{video.channel}</p>
+                </div>
             </div>
-            <div className="videoCard__info-container">
-                <p className='videoCard__title'>{videos.title}</p>
-                <p className='videoCard__channel'>{videos.channel}</p>
-            </div>
-        </div>
+        </Link>
     );
 };
 

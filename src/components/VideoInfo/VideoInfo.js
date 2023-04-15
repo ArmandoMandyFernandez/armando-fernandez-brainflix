@@ -1,10 +1,31 @@
 import "./VideoInfo.scss";
 import viewsIcon from "../../assets/images/Icons/views.svg";
 import heartIcon from "../../assets/images/Icons/likes.svg";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-const VideoInfo = ({ selectedVideo }) => {
-    const { title, channel, description, views, likes, timestamp } =
-        selectedVideo;
+const VideoInfo = ({selectedVideoId}) => {
+    const [videoDetails, setVideoDetails] = useState(null);
+        
+    
+    useEffect(() => {
+        if(selectedVideoId === null){
+            return;
+        }
+        axios
+            .get(`https://project-2-api.herokuapp.com/videos/${selectedVideoId}?api_key=2aa1c4a6-3f46-439f-8439-d592411fdb89`)
+            .then((response) => {
+                console.log(response.data);
+                setVideoDetails(response.data);
+            });
+    }, [selectedVideoId])
+
+    if(videoDetails === null){
+        return <div>LOADING...</div>
+    }
+
+
+    const { title, channel, description, views, likes, timestamp } = videoDetails;
     
     return (
         <section className="videoInfo">
@@ -40,6 +61,6 @@ const VideoInfo = ({ selectedVideo }) => {
             </div>
         </section>
     );
-};
+}
 
 export default VideoInfo;

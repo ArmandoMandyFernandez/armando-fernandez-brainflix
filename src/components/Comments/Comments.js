@@ -1,9 +1,28 @@
 import "./Comments.scss";
+import { useState, useEffect } from "react";
 import mohan from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/images/Icons/add_comment.svg";
+import axios from "axios";
 
-const Comments = ({ selectedVideo }) => {
-    const { comments } = selectedVideo;
+const Comments = ({ selectedVideoId }) => {
+    const [videoDetails, setVideoDetails] = useState(null);
+
+    useEffect(() =>{
+        if(selectedVideoId === null){
+            return;
+        }
+        axios.get(`https://project-2-api.herokuapp.com/videos/${selectedVideoId}?api_key=2aa1c4a6-3f46-439f-8439-d592411fdb89`)
+        .then((response) => {
+            console.log(response.data);
+            setVideoDetails(response.data);
+        });
+    },[selectedVideoId]);
+
+    if(videoDetails === null){
+        return <div>Loading...</div>
+    }
+
+    const { comments } = videoDetails;
 
 
     return (
