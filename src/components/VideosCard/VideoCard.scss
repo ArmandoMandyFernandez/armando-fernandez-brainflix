@@ -3,10 +3,12 @@
 @use '../../styles/partials/typography' as *;
 @use '../../styles/partials/variables' as *;
 
-.videoCard{
+a .videoCard{
     display: flex;
     width: 100%;
     padding: 1rem 0;
+    text-decoration: none;
+    color: $primary-black;
     @include tablet{
         max-height: 10rem;
         width: 40%;
@@ -15,12 +17,18 @@
         width: unset;
         padding: .5rem;
     }
-
+    
     &__image-container{
         background-color: $secondary-silver;
         border-radius: 4px;
         width: 30%;
-        max-height: 4rem;
+        max-height: 15vh;
+        max-width: 25vh;
+        @include desktop{
+            width: 50%;
+            max-height: 20vh;
+            max-width: 30vh;
+        }
     }
 
     &__image{
@@ -32,7 +40,7 @@
     &__info-container{
         padding: 0 1rem;
         text-align: left;
-        width: 70%;
+        width: 70%
         
     }
 
@@ -52,8 +60,8 @@
             @include desktop-tablet-body-copy;
         }
     }
-
-
 }
+
+
 
 

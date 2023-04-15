@@ -30,7 +30,7 @@ const Comments = ({selectedVideoId}) => {
 
     return (
         <section className="comments">
-            <h3 className="comments__header">{comments.length}Comments</h3>
+            <h3 className="comments__header">{comments.length} Comments</h3>
             <div className="comments__container">
                 <div className="comments__image-container">
                     <img src={mohan} alt="" className="comments__image-photo" />
