@@ -161,10 +161,6 @@
             background-color: $secondary-blue;
         }
 
-        &-description {
-            flex-grow: 1;
-        }
-
         &-cancel {
             @include mobile-labels-buttons;
             color: $primary-blue;
