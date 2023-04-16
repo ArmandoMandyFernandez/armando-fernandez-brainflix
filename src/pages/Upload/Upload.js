@@ -1,8 +1,26 @@
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import publish from "../../assets/images/Icons/publish.svg";
 import "./Upload.scss";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Upload = () => {
+    const [formIncomplete, setFormIncomplete] = useState(false);
+
+    const handlePublishClick = (event) => {
+        event.preventDefault();
+        const titleInput = document.querySelector('#title');
+        const descriptionInput = document.querySelector('#description')
+        if (titleInput.value !== '' && descriptionInput.value !== ''){
+            alert('Upload Complete');
+            window.location.href = '/';
+
+        } else {
+            setFormIncomplete(true);
+            event.preventDefault();
+        }
+
+    }
     return (
         <section className="upload">
             <h1 className="upload__title">Upload Video</h1>
@@ -24,6 +42,8 @@ const Upload = () => {
                                 type="text"
                                 placeholder="Add a title to your video"
                                 className="upload__form-input"
+                                id='title'
+                                required
                             />
                         </label>
                         <label htmlFor="" className="upload__form-label">
@@ -32,20 +52,25 @@ const Upload = () => {
                                 type="text"
                                 placeholder="Add a description to your video"
                                 className="upload__form-input"
+                                id="description"
+                                required
                             />
                         </label>
+                        {formIncomplete && <p className="upload__error-message">Both Title and Description are required!</p>}
                     </form>
                 </div>
             </div>
             <div className="upload__buttons-container">
-                <button className="upload__button">
+                <Link to="/" className="upload__button" onClick={handlePublishClick}>
+                
                     <img
                         src={publish}
                         alt=""
                         className="upload__button-image"
                     />
                     <span className="upload__button-description">PUBLISH</span>
-                </button>
+                
+                </Link>
                 <button className="upload__button-cancel">
                     <span className="upload__button-description">CANCEL</span>
                 </button>

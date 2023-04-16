@@ -112,6 +112,11 @@
                 margin-bottom: 1rem;
             }
         }
+        
+    }
+
+    &__error-message{
+        color: red;
     }
 
     &__buttons-container {
@@ -141,17 +146,13 @@
         flex-direction: row;
         align-items: center;
         margin-bottom: 1rem;
+        text-align: center;
         @include tablet{
             width: 15%;
         }
 
         &:hover {
             background-color: $secondary-blue;
-        }
-
-
-        &-image {
-            position: absolute;
         }
 
         &-description {
