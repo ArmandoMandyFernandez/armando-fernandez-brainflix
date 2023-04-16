@@ -36,7 +36,7 @@ function Header() {
                             src={avatar}
                         />
                     </div>
-                    <Link to='upload'>
+                    <Link to='upload'className="navBar__functions-button-link">
                         <button className="navBar__functions-button">
                             <img
                                 className="navBar__functions-upload-image"

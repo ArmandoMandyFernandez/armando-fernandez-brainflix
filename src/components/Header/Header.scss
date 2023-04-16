@@ -148,7 +148,13 @@
         }
 
         @include desktop{
-            width: 9.375rem;
+            width: 100%;
+            display: flex;
+            flex-grow: 1;
+        }
+
+        &-link{
+            display: flex;
         }
     }
 
@@ -158,7 +164,6 @@
         &-image{
         width: 1rem;
         height: 1rem;
-        position: absolute;
         }
     }
 
@@ -166,7 +171,7 @@
     &__functions-avatar-2{
         display: none;
         @include tablet{
-            display: unset;
+            display: flex;
             border-radius: 50%;
             max-width: 2.5rem;
             max-height: 2.25rem;
