@@ -30,7 +30,6 @@ function Main() {
                 "https://project-2-api.herokuapp.com/videos/?api_key=2aa1c4a6-3f46-439f-8439-d592411fdb89"
             )
             .then((response) => {
-                console.log(response.data);
                 setVideos(response.data);
             });
     }, []);
@@ -44,7 +43,6 @@ function Main() {
                 `https://project-2-api.herokuapp.com/videos/${videoIdToDisplay}?api_key=2aa1c4a6-3f46-439f-8439-d592411fdb89`
             )
             .then((response) => {
-                console.log(response.data);
                 setVideoDetails(response.data);
             });
     }, [videoIdToDisplay]);
