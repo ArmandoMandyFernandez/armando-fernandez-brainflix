@@ -26,11 +26,14 @@
     }
 
     &__container{
+        @include tablet{
+            margin-bottom: 1rem;
+
+        }
         @include desktop{
             display: flex;
             flex-wrap: nowrap;
             flex-direction: row;
-            margin-bottom: 1rem;
         }
     }
 
@@ -47,6 +50,9 @@
 
     &__thumbnail-image-container {
         width: 100%;
+        @include tablet{
+            margin-bottom: 1rem;
+        }
         @include desktop{
             width: 40%;
             margin: 0;
@@ -67,6 +73,7 @@
     &__form {
         display: flex;
         flex-direction: column;
+        
         @include desktop{
             flex-grow: 1;
         }
@@ -102,6 +109,7 @@
             @include tablet{
                 min-height: 2.5rem;
                 padding: 1rem;
+                margin-bottom: 1rem;
             }
         }
     }
@@ -111,13 +119,11 @@
         @include tablet{
             display: flex;
             flex-direction: row-reverse;
-            justify-content: flex-end;
-            width: 30%;
+            width: 100%;
+            border-top: solid 1px $secondary-silver;
         }
         @include desktop{
-            width: 100%;
             justify-content: unset;
-            border-top: solid 1px $secondary-silver;
             
         }
     }
@@ -135,7 +141,7 @@
         flex-direction: row;
         align-items: center;
         margin-bottom: 1rem;
-        @include desktop{
+        @include tablet{
             width: 15%;
         }
 
@@ -164,7 +170,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            @include desktop{
+            @include tablet{
                 width: 15%;
             }
         }
