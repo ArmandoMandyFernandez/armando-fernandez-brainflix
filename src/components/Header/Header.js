@@ -11,7 +11,7 @@ function Header() {
             <div className="navBar__content">
                 <div className="navBar__logo-container">
                     <Link to='/'>
-                        <img className="navBar__logo" src={logo} />
+                        <img className="navBar__logo" src={logo} alt="the brainflix logo"/>
                     </Link>
                 </div>
                 <div className="navBar__functions">
@@ -34,6 +34,7 @@ function Header() {
                             className="navBar__functions-avatar-1"
                             type="submit"
                             src={avatar}
+                            alt="muhans famous avatar"
                         />
                     </div>
                     <Link to='upload' className="navBar__functions-button-link">
@@ -41,13 +42,14 @@ function Header() {
                             <img
                                 className="navBar__functions-upload-image"
                                 src={upload}
+                                alt="upload icon"
                             />
                             <span className="navBar__functions-upload">
                                 UPLOAD
                             </span>
                         </button>
                     </Link>
-                    <img className="navBar__functions-avatar-2" src={avatar} />
+                    <img className="navBar__functions-avatar-2" src={avatar} alt="muhans famous avatar"/>
                 </div>
             </div>
         </header>
