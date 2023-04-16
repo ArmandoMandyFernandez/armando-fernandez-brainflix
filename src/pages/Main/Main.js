@@ -31,6 +31,9 @@ function Main() {
             )
             .then((response) => {
                 setVideos(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching details:", error);
             });
     }, []);
 
@@ -44,11 +47,14 @@ function Main() {
             )
             .then((response) => {
                 setVideoDetails(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching details:", error);
             });
     }, [videoIdToDisplay]);
 
     if (videoDetails === null) {
-        return <div class="lds-hourglass"></div>;
+        return <div className="lds-hourglass"></div>;
     }
 
     return (
