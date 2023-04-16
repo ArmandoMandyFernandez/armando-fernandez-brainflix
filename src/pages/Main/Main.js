@@ -48,7 +48,7 @@ function Main() {
     }, [videoIdToDisplay]);
 
     if (videoDetails === null) {
-        return <div>LOADING...</div>;
+        return <div class="lds-hourglass"></div>;
     }
 
     return (

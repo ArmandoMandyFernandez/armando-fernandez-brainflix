@@ -15,7 +15,7 @@ function App() {
                 <Route path="/" element={<Main />} />
                 <Route path='/videos/:idFromParams' element={<Main />}/>
                 <Route path="/upload" element={<Upload to="upload" />} />
-                <Route path='*' element={<NotFound />}/>
+                <Route path='/*' element={<NotFound />}/>
             </Routes>
         </div>
     );
