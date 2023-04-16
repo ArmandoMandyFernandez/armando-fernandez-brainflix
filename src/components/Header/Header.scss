@@ -138,9 +138,10 @@
         height: 2.5rem;
         width: 100%;
         padding: 0 1rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        // display: flex;
+        // flex-direction: row;
+        // align-items: center;
+        // text-align: center;
         &:hover{
             background-color: $secondary-blue;
         }
@@ -148,10 +149,6 @@
         @include tablet{
             padding: 0 3rem;
             @include desktop-tablet-labels-buttons;
-        }
-
-        &-link{
-            display: flex;
         }
     }
 
