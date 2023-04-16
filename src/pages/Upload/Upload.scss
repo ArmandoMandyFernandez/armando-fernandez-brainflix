@@ -10,43 +10,116 @@
     text-align: left;
     padding: 1rem;
     border-top: solid 1px $secondary-silver;
+    @include desktop{
+        margin: auto;
+        width: 80%;
+    }
 
     &__title {
         @include mobile-page-header;
         margin: 1rem 0;
+        @include tablet{
+            @include desktop-tablet-header;
+            border-bottom: solid 1px $secondary-silver;
+            padding-bottom: 1rem;
+        }
+    }
+
+    &__container{
+        @include desktop{
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            margin-bottom: 1rem;
+        }
     }
 
     &__thumbnail-label {
         @include mobile-section-header;
         color: $primary-silver;
+        margin-bottom: .25rem;
+        @include tablet{
+            @include desktop-tablet-section-header;
+            width: 40%;
+            margin: 0;
+        }
     }
 
     &__thumbnail-image-container {
         width: 100%;
+        @include desktop{
+            width: 40%;
+            margin: 0;
+        }
     }
 
     &__thumbnail-image {
         width: 100%;
         border-radius: 4px;
+        @include tablet{
+            width: 50%;
+        }
+        @include desktop{
+            width: 100%;
+        }
     }
 
     &__form {
         display: flex;
         flex-direction: column;
+        @include desktop{
+            flex-grow: 1;
+        }
+
+        &-container{
+            @include desktop{
+                margin-left: 1rem;
+                flex-grow: 1;
+            }
+        }
 
         &-label {
             @include mobile-section-header;
             color: $primary-silver;
             width: 100%;
+            margin-bottom: .25rem;
         }
-
+        
         &-input {
             width: 100%;
+            min-height: 2.25rem;
+            border: solid 1px $primary-silver;
+            border-radius: .25rem;
+            padding: .75rem;
+            background-color: $secondary-white;
+            height: 100%;
+            :active{
+                border: solid 2px $primary-blue;
+            }
+            :valid{
+                border: solid 1px $primary-silver;
+            }
+            @include tablet{
+                min-height: 2.5rem;
+                padding: 1rem;
+            }
         }
     }
 
     &__buttons-container {
         padding: 1rem 0;
+        @include tablet{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            width: 30%;
+        }
+        @include desktop{
+            width: 100%;
+            justify-content: unset;
+            border-top: solid 1px $secondary-silver;
+            
+        }
     }
 
     &__button {
@@ -62,34 +135,40 @@
         flex-direction: row;
         align-items: center;
         margin-bottom: 1rem;
+        @include desktop{
+            width: 15%;
+        }
 
         &:hover {
             background-color: $secondary-blue;
         }
 
+
         &-image {
             position: absolute;
         }
-    }
 
-    &__button-description {
-        flex-grow: 1;
-    }
+        &-description {
+            flex-grow: 1;
+        }
 
-    &__button-cancel {
-        @include mobile-labels-buttons;
-        color: $primary-blue;
-        background-color: $primary-white;
-        border-radius: 0.25rem;
-        border: none;
-        height: 2.5rem;
-        width: 100%;
-        padding: 0 1rem;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        &:hover {
-            // background-color: $secondary-blue;
+        &-cancel {
+            @include mobile-labels-buttons;
+            color: $primary-blue;
+            background-color: $primary-white;
+            border-radius: 0.25rem;
+            border: none;
+            height: 2.5rem;
+            width: 100%;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            @include desktop{
+                width: 15%;
+            }
         }
     }
+
+    
 }
