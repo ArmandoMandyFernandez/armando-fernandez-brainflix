@@ -62,14 +62,7 @@ const Upload = () => {
             </div>
             <div className="upload__buttons-container">
                 <Link to="/" className="upload__button" onClick={handlePublishClick}>
-                
-                    <img
-                        src={publish}
-                        alt=""
-                        className="upload__button-image"
-                    />
-                    <span className="upload__button-description">PUBLISH</span>
-                
+                    PUBLISH
                 </Link>
                 <button className="upload__button-cancel">
                     <span className="upload__button-description">CANCEL</span>

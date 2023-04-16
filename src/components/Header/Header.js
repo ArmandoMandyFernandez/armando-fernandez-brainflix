@@ -39,14 +39,7 @@ function Header() {
                     </div>
                     <Link to='upload' className="navBar__functions-button-link">
                         <button className="navBar__functions-button">
-                            <img
-                                className="navBar__functions-upload-image"
-                                src={upload}
-                                alt="upload icon"
-                            />
-                            <span className="navBar__functions-upload">
                                 UPLOAD
-                            </span>
                         </button>
                     </Link>
                     <img className="navBar__functions-avatar-2" src={avatar} alt="muhans famous avatar"/>
