@@ -27,7 +27,7 @@ function Main() {
     useEffect(() => {
         axios
             .get(
-                "https://project-2-api.herokuapp.com/videos/?api_key=2aa1c4a6-3f46-439f-8439-d592411fdb89"
+                "http://localhost:8081/videos"
             )
             .then((response) => {
                 setVideos(response.data);
@@ -43,7 +43,7 @@ function Main() {
         }
         axios
             .get(
-                `https://project-2-api.herokuapp.com/videos/${videoIdToDisplay}?api_key=2aa1c4a6-3f46-439f-8439-d592411fdb89`
+                `http://localhost:8081/videos/${videoIdToDisplay}`
             )
             .then((response) => {
                 setVideoDetails(response.data);
