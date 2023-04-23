@@ -9,7 +9,7 @@ const VideoCard = ({ video }) => {
                     <img
                         src={"http://localhost:8081/videos/" + video.image} 
                         className="videoCard__image"
-                        alt=""
+                        alt={video.title}
                     />
                 </div>
                 <div className="videoCard__info-container">

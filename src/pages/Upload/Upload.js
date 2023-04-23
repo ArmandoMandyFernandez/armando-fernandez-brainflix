@@ -1,11 +1,12 @@
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
-import publish from "../../assets/images/Icons/publish.svg";
 import "./Upload.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
 
 const Upload = () => {
     const [formIncomplete, setFormIncomplete] = useState(false);
+    
 
     const handlePublishClick = (event) => {
         event.preventDefault();
@@ -14,13 +15,24 @@ const Upload = () => {
         if (titleInput.value !== '' && descriptionInput.value !== ''){
             alert('Upload Complete');
             window.location.href = '/';
-
         } else {
             setFormIncomplete(true);
             event.preventDefault();
         }
+        const newVid = {
+            title: titleInput.value,
+            description: descriptionInput.value,
+        }
 
+        axios.post('http://localhost:8081/videos/', newVid)
+            .then(res => {
+                console.log(res.data);
+            }) 
+            .catch(error => {
+                console.error(error);
+            })
     }
+
     return (
         <section className="upload">
             <h1 className="upload__title">Upload Video</h1>
