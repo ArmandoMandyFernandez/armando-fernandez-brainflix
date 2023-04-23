@@ -7,11 +7,12 @@ import axios from "axios";
 const Upload = () => {
     const [formIncomplete, setFormIncomplete] = useState(false);
     
-
+// click handler for the upload page
     const handlePublishClick = (event) => {
         event.preventDefault();
         const titleInput = document.querySelector('#title');
         const descriptionInput = document.querySelector('#description')
+        // creating the alert
         if (titleInput.value !== '' && descriptionInput.value !== ''){
             alert('Upload Complete');
             window.location.href = '/';
@@ -19,11 +20,12 @@ const Upload = () => {
             setFormIncomplete(true);
             event.preventDefault();
         }
+        // getting the values of the new video inputs
         const newVid = {
             title: titleInput.value,
             description: descriptionInput.value,
         }
-
+        // posting the videos on the api
         axios.post('http://localhost:8081/videos/', newVid)
             .then(res => {
                 console.log(res.data);

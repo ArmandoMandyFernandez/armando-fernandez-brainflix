@@ -24,6 +24,7 @@ function Main() {
         (video) => video.id !== videoIdToDisplay
     );
 
+// getting the list of videos
     useEffect(() => {
         axios
             .get(
@@ -36,7 +37,8 @@ function Main() {
                 console.error("Error fetching details:", error);
             });
     }, []);
-
+    
+// getting the description and comments in the videos api
     useEffect(() => {
         if (videoIdToDisplay === null) {
             return;
