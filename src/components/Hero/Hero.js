@@ -2,7 +2,7 @@ import './Hero.scss'
 
 
 function Hero({videoDetails}) {
-const {image} = videoDetails;
+
 
 return ( 
         <section className='videoHero'>
